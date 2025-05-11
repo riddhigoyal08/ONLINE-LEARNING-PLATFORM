@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>eLearning Platform</title>
+  <link rel="stylesheet" href="style for eleaning.css" />
+  <link rel="stylesheet" href="C:\Users\Lenovo\OneDrive\Desktop\prashant last project\recommender\font icon.html"/>
+  <script src="js for elearning.js"></script>
+</head>
+<body>
+
+<!-- Navigation -->
+<nav>
+  <img src="C:\Users\Lenovo\Downloads\E-Learning-main\E-Learning-main\Images\eLearning_logo.png" alt="Website logo" />
+  <div class="navigation">
+    <ul>
+      <i id="menu-close" class="fa-sharp fa-regular fa-circle-xmark"></i>
+      <li><a href="#">Home</a></li>
+      <li><a href="#features">About us</a></li>
+      <li><a href="#course">Courses</a></li>
+      <li><a href="#video-lessons">Lessons</a></li>
+      <li><a href="#quizzes">Quizzes</a></li>
+      <li><a href="#progress">Progress</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+    <img id="profile-btn" src="href=C:\Users\Lenovo\OneDrive\Desktop\prashant last project\recommender\font icon.html" alt="Profile" />
+    <img id="menu-btn" src=href='C:\Users\Lenovo\OneDrive\Desktop\prashant last project\recommender\font icon.html' alt="Menu" />
+  </div>
+</nav>
+
+<!-- Home -->
+<section id="home">
+  <h2>Enhance Your Future With eLearning</h2>
+  <p>Start your journey with us — Learn from video lessons, take quizzes, and track your progress.</p>
+  <div class="btn">
+    <a class="btn-one" href="#course">Learn more</a>
+    <a class="btn-two" href="#course">Visit Courses</a>
+  </div>
+</section>
+
+<!-- Features -->
+<section id="features">
+  <h1>Platform Features</h1>
+  <div class="feature-base">
+    <div class="feature-box">
+      <i class="fa-solid fa-video"></i>
+      <h3>Media Streaming</h3>
+      <p>High-quality video lessons with seamless streaming support.</p>
+    </div>
+    <div class="feature-box">
+      <i class="fa-solid fa-user-lock"></i>
+      <h3>User Authentication</h3>
+      <p>Secure login and signup system to personalize your learning.</p>
+    </div>
+    <div class="feature-box">
+      <i class="fa-solid fa-database"></i>
+      <h3>Cloud Storage</h3>
+      <p>Save your data, preferences, and progress securely in the cloud.</p>
+    </div>
+  </div>
+</section>
+
+<!-- Courses -->
+<section id="course">
+  <h1>Our Popular Courses</h1>
+  <div class="course-box">
+    <div class="courses">
+      <img src="C:\Users\Lenovo\Downloads\E-Learning-main\E-Learning-main\Images\webdev.png" alt="Web Development" />
+      <div class="details">
+        <h6>Web Development</h6>
+        <span>₹399</span>
+      </div>
+    </div>
+    <div class="courses">
+      <img src="C:\Users\Lenovo\Downloads\E-Learning-main\E-Learning-main\Images\data_science.jpg" alt="Data Science" />
+      <div class="details">
+        <h6>Data Science</h6>
+        <span>₹399</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Video Lessons -->
+<section id="video-lessons">
+  <h1>Video Lessons</h1>
+  <div class="lesson-box">
+    <video width="500" controls>
+      <source src="videos/lesson1.mp4" type="video/mp4">
+      Your browser does not support HTML5 video.
+    </video>
+    <video width="500" controls>
+      <source src="videos/lesson2.mp4" type="video/mp4">
+      Your browser does not support HTML5 video.
+    </video>
+  </div>
+</section>
+
+<!-- Quizzes -->
+<section id="quizzes">
+  <h1>Quick Quiz</h1>
+  <form id="quiz-form">
+    <label>1. What is HTML?</label><br>
+    <input type="radio" name="q1" value="a"> Programming Language<br>
+    <input type="radio" name="q1" value="b"> Markup Language<br>
+    <input type="radio" name="q1" value="c"> Database<br><br>
+    
+    <label>2. What does CSS stand for?</label><br>
+    <input type="radio" name="q2" value="a"> Color Style Sheet<br>
+    <input type="radio" name="q2" value="b"> Creative Style Sheet<br>
+    <input type="radio" name="q2" value="c"> Cascading Style Sheet<br><br>
+    
+    <button type="button" onclick="checkQuiz()">Submit Quiz</button>
+  </form>
+  <p id="quiz-result"></p>
+</section>
+
+<!-- Progress Tracking -->
+<section id="progress">
+  <h1>Your Progress</h1>
+  <p>Track your learning progress below:</p>
+  <div>
+    <label>Web Development</label>
+    <progress value="60" max="100"></progress> 60%<br>
+    <label>Data Science</label>
+    <progress value="30" max="100"></progress> 30%
+  </div>
+</section>
+
+<!-- Contact -->
+<section id="contact">
+  <h1>Contact Us</h1>
+  <form>
+    <input type="text" placeholder="Name" /><br>
+    <input type="email" placeholder="Email" /><br>
+    <textarea placeholder="Message"></textarea><br>
+    <button>Send</button>
+  </form>
+</section>
+
+<!-- Footer -->
+<footer>
+  <p>&copy; 2025 eLearning Platform | Built by Riddhi</p>
+</footer>
+
+<!-- Scripts -->
+<script>
+  function checkQuiz() {
+    const q1 = document.querySelector('input[name="q1"]:checked')?.value;
+    const q2 = document.querySelector('input[name="q2"]:checked')?.value;
+    let score = 0;
+    if (q1 === "b") score++;
+    if (q2 === "c") score++;
+    document.getElementById("quiz-result").innerText = `Your score: ${score}/2`;
+  }
+
+  $("#menu-btn").click(() => {
+    $("nav .navigation ul").addClass("active");
+  });
+  $("#menu-close").click(() => {
+    $("nav .navigation ul").removeClass("active");
+  });
+</script>
+
+</body>
+</html>
